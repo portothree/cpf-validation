@@ -1,14 +1,14 @@
-function validate(str) {
+export function validate(str: any) {
 	if (str !== null) {
 		if (str !== undefined) {
 			if (str.length >= 11 || str.length <= 14) {
 				str = str
-					.replace(".", "")
-					.replace(".", "")
-					.replace("-", "")
-					.replace(" ", "");
+					.replace('.', '')
+					.replace('.', '')
+					.replace('-', '')
+					.replace(' ', '');
 
-				if (!str.split("").every((c) => c === str[0])) {
+				if (!str.split('').every((c: any) => c === str[0])) {
 					try {
 						let d1, d2;
 						let dg1, dg2, rest;
@@ -47,10 +47,10 @@ function validate(str) {
 							str.length - 2,
 							str.length
 						);
-						nDigResult = "" + dg1 + "" + dg2;
+						nDigResult = '' + dg1 + '' + dg2;
 						return nDigVerific == nDigResult;
 					} catch (e) {
-						console.error("Erro !" + e);
+						console.error('Erro !' + e);
 
 						return false;
 					}
@@ -59,7 +59,3 @@ function validate(str) {
 		}
 	} else return false;
 }
-
-console.log(validate("111.111.111-11"));
-console.log(validate("123.456.789-99"));
-console.log(validate("935.411.347-80"));
