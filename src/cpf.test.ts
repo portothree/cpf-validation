@@ -1,12 +1,13 @@
-import { validate } from './cpf';
+import Cpf from './cpf';
 
-describe(validate.name, () => {
+describe('CPF', () => {
 	test.each([
 		['111.111.111-11', false],
 		['123.456.789-99', false],
 		['935.411.347-80', true],
-	])('validate(%s)', (cpf, expected) => {
-		const result = validate(cpf);
-		expect(result).toBe(expected);
+		['906.255.860-77', true],
+	])('validate %s', (cpfChars, expected) => {
+		const cpf = new Cpf(cpfChars);
+		expect(cpf.value).toBe(expected);
 	});
 });

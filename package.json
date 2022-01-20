@@ -6,6 +6,7 @@
 	"scripts": {
 		"pretest": "tsc",
 		"test": "jest dist/",
+		"test:watch": "jest dist/ --watch",
 		"build": "tsc"
 	},
 	"repository": {
